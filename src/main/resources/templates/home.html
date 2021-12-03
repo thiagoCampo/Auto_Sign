@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>AutoSign</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
+<div class="header">
+    <ul>
+        <li><a th:href="@{#}"> Home</a></li>
+        <li><a th:href="@{#}"> History</a></li>
+        <li><a th:href="@{#}"> Contacts</a></li>
+        <li><a th:href="@{#}"> About us</a></li>
+    </ul>
+</div>
     <h1>Hello World</h1>
 
 </body>

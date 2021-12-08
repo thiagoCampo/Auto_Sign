@@ -1,5 +1,6 @@
 package com.example.auto_sign;
 
+import org.json.JSONException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +19,9 @@ public class HomeController {
     }
 
     @PostMapping("/")
-    public String URLsubmit(@ModelAttribute HomeView home, Model model) {
+    public String URLsubmit(@ModelAttribute HomeView home, Model model) throws JSONException {
         model.addAttribute("home", home);
+        home.sendURL(home.getURL());
         System.out.println(home.getURL());
         return "result";
     }

@@ -1,26 +1,54 @@
+@font-face {
+    font-family: myNavFont;
+    src: url(./Fonts/sansation.bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: myNavFont;
+    src: url(./Fonts/sansation.regular.ttf);
+}
+*{
+    font-family: MyNavFont;
+}
+h1 {
+    text-align:center;
+}
 
-/*Header styles (They all have .header before)*/
-
-.header ul {
+h2 {
+    text-align: center;
+}
+ul {
     list-style-type: none;
     margin: 0;
-    background-color: #f1f1f1;
     padding: 0;
-    width: 200px;
+    overflow: hidden;
+    background-color: #6A5ACD;
 }
-
-.header li a {
+li {
+    float: left;
+}
+li a {
     display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-.header li {
-    display: inline;
-}
-
-.header li a:hover {
-    background-color: #555;
     color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: large;
+}
+
+li a:hover {
+    display: block;
+    background-color: mediumpurple;
+}
+.active{
+    background-color: #6A5ACD;
+}
+
+.column {
+    float: left;
+    width: 100%;
+    padding: 15px;
+    font-size: large;
+    font-weight: bold;
+    color:#6A5ACD;
 }

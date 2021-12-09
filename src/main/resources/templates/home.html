@@ -8,15 +8,20 @@
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
-<div class="header">
+
+<nav>
     <ul>
-        <li><a th:href="@{#}"> Home</a></li>
+        <li><a th:href="@{#}"class="active"> Home</a></li>
         <li><a th:href="@{#}"> History</a></li>
         <li><a th:href="@{#}"> Contacts</a></li>
         <li><a th:href="@{#}"> About us</a></li>
     </ul>
+</nav>
+
+<div class="column">
+    <h1> SignTube</h1>
+    <h2> Get your Youtube videos SignTubed! </h2>
 </div>
-    <h1>Hello World</h1>
 
 </body>
 </html>

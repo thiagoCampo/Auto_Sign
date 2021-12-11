@@ -1,17 +1,4 @@
-package com.example.auto_sign;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-
-import java.io.IOException;
-import java.sql.*;
-import java.time.Duration;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+package AutoSign;
 
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
@@ -20,76 +7,26 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.youtube.YouTube;
 import com.google.api.services.youtube.model.Video;
 import com.google.api.services.youtube.model.VideoListResponse;
+import org.json.JSONException;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
+import java.io.IOException;
+import java.sql.*;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Controller
-public class HomeController {
-
-    @GetMapping("/")
-    public String home(Model model) {
+public class AutoSignController {
+    /**GetMapping associates the URL / to the method home()**/
+    @GetMapping("/" )
+    public String Home(Model model){
         model.addAttribute("home", new HomeView());
-
-        /*String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
-        Connection conn= null;
-        try {
-            // Registers the driver
-            Class.forName("org.postgresql.Driver");
-        } catch (Exception e) {
-        }
-
-        try {
-            Statement s=conn.createStatement();
-            String sqlStr = "insert into videos (url,title, duration) values('https://www.youtube.com/watch?v=1-t_PSFyzXs','Peppa pig','8.59')”;
-            s.execute(sqlStr);
-            s.close();
-            conn.close();
-        }
-        catch (Exception e){
-        }*/
-
-        // -------------
-        /*String url = "jdbc:postgresql://localhost:5432/postgres";
-        String user = "postgres";
-        String password = "Arius135";*/
-
-        // TEST CONNECTION WITH DATABASE
-       /* try (Connection con = DriverManager.getConnection(url, user, password);
-             Statement st = con.createStatement();
-             ResultSet rs = st.executeQuery("SELECT VERSION()")) {
-
-            if (rs.next()) {
-                System.out.println(rs.getString(1));
-            }
-
-        } catch (SQLException ex) {
-
-            Logger lgr = Logger.getLogger(HomeController.class.getName());
-            lgr.log(Level.SEVERE, ex.getMessage(), ex);
-        }
-
-        // FILL IN THE TABLE
-        String link = "https://www.youtube.com/hello_2";
-        String title = "Peppa pig video";
-        String duration = "8 min";
-
-
-        String query = "INSERT INTO videos(url, title, duration) VALUES(?, ?, ?)";
-
-        try (Connection con = DriverManager.getConnection(url, user, password);
-             PreparedStatement pst = con.prepareStatement(query)) {
-
-            pst.setString(1, link);
-            pst.setString(2, title);
-            pst.setString(3, duration);
-            pst.executeUpdate();
-
-        } catch (SQLException ex) {
-
-            Logger lgr = Logger.getLogger(HomeController.class.getName());
-            lgr.log(Level.SEVERE, ex.getMessage(), ex);
-        }*/
-        
-
+        /** returning the logical name of the html to be viewed, here home.html**/
         return "home";
     }
 
@@ -113,7 +50,7 @@ public class HomeController {
 
         } catch (SQLException ex) {
 
-            Logger lgr = Logger.getLogger(HomeController.class.getName());
+            Logger lgr = Logger.getLogger(AutoSignController.class.getName());
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
         }
 
@@ -179,15 +116,29 @@ public class HomeController {
 
         } catch (SQLException ex) {
 
-            Logger lgr = Logger.getLogger(HomeController.class.getName());
+            Logger lgr = Logger.getLogger(AutoSignController.class.getName());
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
         }
 
         return "result";
     }
 
+    @GetMapping("/history")
+    public String History(){
+        return "history";
+    }
 
-}
+    @GetMapping("/contactus")
+    public String ContactUs(){
+        return "contactus";
+    }
+
+    @GetMapping("/aboutus")
+    public String AboutUs(){
+        return "aboutus";
+    }
+    }
+
 
 
 

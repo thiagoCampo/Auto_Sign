@@ -3,24 +3,25 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
     <title>AutoSign</title>
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
-<div class="header">
+
+<nav>
     <ul>
-        <li><a th:href="@{#}">Home</a></li>
-        <li><a th:href="@{#}">History</a></li>
-        <li><a th:href="@{#}">Contacts</a></li>
-        <li><a th:href="@{#}">About us</a></li>
+        <li><a th:href="@{/}"class="active"> Home</a></li>
+        <li><a th:href="@{/history}"> History</a></li>
+        <li><a th:href="@{/contactus}"> Contacts</a></li>
+        <li><a th:href="@{/aboutus}"> About us</a></li>
     </ul>
+</nav>
+
+<div class="column">
+    <h1> SignTube</h1>
+    <h2> Get your Youtube videos SignTubed! </h2>
 </div>
-    <h1>Hello World</h1>
-
-
-<!-------------------------->
-
 
 <h1>Form</h1>
 <form action="#" th:action="@{/}" th:object="${home}" method="post">
@@ -28,8 +29,6 @@
     <p>(For example: https://www.youtube.com)</p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
-
-
 
 </body>
 </html>

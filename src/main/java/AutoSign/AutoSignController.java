@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
 @Controller
 public class AutoSignController {
     /**GetMapping associates the URL / to the method home()**/
@@ -19,9 +22,11 @@ public class AutoSignController {
     @PostMapping("/")
     /** Model is an object that takes data from the controller to the view page **/
     /**Attributes that are placed in the model will be copied into the servlet response attributes**/
-    public String URLsubmit(@ModelAttribute HomeView home, Model model) throws JSONException {
+    public String URLsubmit(@ModelAttribute HomeView home, Model model) throws JSONException, IOException, InterruptedException {
         model.addAttribute("home", home);
         home.sendURL(home.getURL());
+        //TimeUnit.SECONDS.sleep(3); // uncomment to download video from cloud DONT CANCEL THE IOException its needed
+        //home.downloadVideo(home.getURL());
         System.out.println(home.getURL());
         return "result";
     }

@@ -40,6 +40,6 @@ public class HomeView {
     }
 
     public void downloadVideo(String url) throws IOException {
-        DownloadObject.downloadObject("autosign-334513", "data_bucket_video_swag", "finals.mp4", "/Users/francescocenciarelli/Desktop/University/Year3/Programming3 /projc/Auto_Sign/src/main/resources/static/images/file.mp4");
+        DownloadObject.downloadObject("autosign-334513", "data_bucket_video_swag", "finals.mp4", "/static/images/file.mp4");
     }
 }

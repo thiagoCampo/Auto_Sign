@@ -9,6 +9,7 @@
 }
 *{
     font-family: MyNavFont;
+    background-color: #6A5ACD;
 }
 h1 {
     text-align:center;
@@ -22,7 +23,6 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #6A5ACD;
 }
 li {
     float: left;
@@ -44,11 +44,21 @@ li a:hover {
     background-color: #b3b3ff;
 }
 
-.column {
+.HomeMsg {
     float: left;
     width: 100%;
     padding: 15px;
     font-size: large;
     font-weight: bold;
-    color:#6A5ACD;
+    color: white;
 }
+
+.AboutUsMsg {
+    float: left;
+    width: 50%;
+    font-size: large;
+    color: white;
+    line-height: 2rem;
+    word-spacing: 1px;
+}
+

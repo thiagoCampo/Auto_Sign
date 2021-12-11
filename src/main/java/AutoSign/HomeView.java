@@ -1,4 +1,4 @@
-package com.example.auto_sign;
+package AutoSign;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

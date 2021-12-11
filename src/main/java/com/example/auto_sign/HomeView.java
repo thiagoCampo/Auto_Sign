@@ -8,6 +8,8 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.json.JSONObject;
 import org.json.JSONException;
 
+import java.io.IOException;
+
 
 public class HomeView {
 
@@ -28,12 +30,16 @@ public class HomeView {
 
         HttpClient httpClient = HttpClientBuilder.create().build();
         try {
-            HttpPost request = new HttpPost("http://0.0.0.0:5000/");
+            HttpPost request = new HttpPost("https://python-microservice.herokuapp.com/download");
             StringEntity params = new StringEntity(json.toString());
             request.addHeader("content-type", "application/json");
             request.setEntity(params);
             HttpResponse response = httpClient.execute(request);
         } catch (Exception ex) {
-        } 
+        }
+    }
+
+    public void downloadVideo(String url) throws IOException {
+        DownloadObject.downloadObject("autosign-334513", "data_bucket_video_swag", "finals.mp4", "/Users/francescocenciarelli/Desktop/University/Year3/Programming3 /projc/Auto_Sign/src/main/resources/static/images/file.mp4");
     }
 }

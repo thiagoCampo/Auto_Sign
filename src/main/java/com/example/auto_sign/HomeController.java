@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
 @Controller
 public class HomeController {
 
@@ -19,13 +22,14 @@ public class HomeController {
     }
 
     @PostMapping("/")
-    public String URLsubmit(@ModelAttribute HomeView home, Model model) throws JSONException {
+    public String URLsubmit(@ModelAttribute HomeView home, Model model) throws JSONException, IOException, InterruptedException {
         model.addAttribute("home", home);
         home.sendURL(home.getURL());
+        TimeUnit.SECONDS.sleep(3);
+        home.downloadVideo(home.getURL());
         System.out.println(home.getURL());
         return "result";
     }
-
 }
 
 

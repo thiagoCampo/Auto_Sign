@@ -11,7 +11,7 @@
 
 <nav>
     <ul>
-        <li><a th:href="@{/home}"class="active"> Home</a></li>
+        <li><a th:href="@{/}"class="active"> Home</a></li>
         <li><a th:href="@{/history}"> History</a></li>
         <li><a th:href="@{/contactus}"> Contacts</a></li>
         <li><a th:href="@{/aboutus}"> About us</a></li>
@@ -22,6 +22,13 @@
     <h1> SignTube</h1>
     <h2> Get your Youtube videos SignTubed! </h2>
 </div>
+
+<h1>Form</h1>
+<form action="#" th:action="@{/}" th:object="${home}" method="post">
+    <p>URL: <input type="url" th:field="*{URL}" /></p>
+    <p>(For example: https://www.youtube.com)</p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
 
 </body>
 </html>

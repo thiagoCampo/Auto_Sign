@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: myNavFont;
     src: url(./Fonts/sansation.bold.ttf);
@@ -45,9 +47,11 @@ li a:hover {
 }
 
 .HomeMsg {
-    float: left;
+    /*float: left;*/
+    text-align: center;
     width: 100%;
-    padding: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
     font-size: large;
     font-weight: bold;
     color: white;
@@ -61,4 +65,9 @@ li a:hover {
     line-height: 2rem;
     word-spacing: 1px;
 }
+
+
+
+/* FOOOTER STYLES */
+
 

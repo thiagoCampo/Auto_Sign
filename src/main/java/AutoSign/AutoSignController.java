@@ -7,11 +7,9 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.youtube.YouTube;
 import com.google.api.services.youtube.model.Video;
 import com.google.api.services.youtube.model.VideoListResponse;
-import org.json.JSONException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.io.IOException;
@@ -130,7 +128,7 @@ public class AutoSignController {
 
     @GetMapping("/contactus")
     public String ContactUs(){
-        return "contactus";
+        return "contactus.html";
     }
 
     @GetMapping("/aboutus")

@@ -29,10 +29,10 @@ public class AutoSignController {
     }
 
     @PostMapping("/")
-    public String URLsubmit(@ModelAttribute HomeView home, Model model) throws IOException {
+    public String URLsubmit(@ModelAttribute HomeView home, Model model) throws IOException, JSONException {
         model.addAttribute("home", home);
         System.out.println(home.getURL());
-
+        home.sendURL(home.getURL());
         String url = "jdbc:postgresql://localhost:5432/postgres";
         String user = "postgres";
         String password = "Arius135";

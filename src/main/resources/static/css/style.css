@@ -62,3 +62,55 @@ li a:hover {
     word-spacing: 1px;
 }
 
+
+/*Used to center the image*/
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}
+
+/*form style*/
+
+
+div.form-container {
+    display: block;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 50%;
+}
+
+form input[type=url] {
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom:10px;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: white;
+}
+
+form input[type=submit] {
+    background-color: #b3b3ff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+form input[type=reset] {
+    background-color: #b3b3ff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    box-sizing: border-box;
+    border-radius: 10px;
+}

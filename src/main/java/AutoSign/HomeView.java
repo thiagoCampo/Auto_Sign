@@ -28,7 +28,7 @@ public class HomeView {
 
         HttpClient httpClient = HttpClientBuilder.create().build();
         try {
-            HttpPost request = new HttpPost("http://0.0.0.0:5000/");
+            HttpPost request = new HttpPost("https://python-microservice.herokuapp.com/download");
             StringEntity params = new StringEntity(json.toString());
             request.addHeader("content-type", "application/json");
             request.setEntity(params);

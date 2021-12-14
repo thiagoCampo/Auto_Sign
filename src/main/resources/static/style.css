@@ -1,11 +1,11 @@
 @font-face {
     font-family: myNavFont;
-    src: url(./Fonts/sansation.bold.ttf);
+    src: url(Fonts/sansation.bold.ttf);
     font-weight: bold;
 }
 @font-face {
     font-family: myNavFont;
-    src: url(./Fonts/sansation.regular.ttf);
+    src: url(Fonts/sansation.regular.ttf);
 }
 *{
     font-family: MyNavFont;

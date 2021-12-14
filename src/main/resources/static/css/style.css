@@ -45,9 +45,11 @@ li a:hover {
 }
 
 .HomeMsg {
-    float: left;
+    /*float: left;*/
+    text-align: center;
     width: 100%;
-    padding: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
     font-size: large;
     font-weight: bold;
     color: white;
@@ -61,4 +63,30 @@ li a:hover {
     line-height: 2rem;
     word-spacing: 1px;
 }
+
+.ContactUsMsg{
+    color: white;
+    text-align: center;
+}
+
+input {
+    background-color: white;
+    margin: 3px;
+    padding: 12px 20px;
+    border: 2px solid mediumpurple;
+    border-radius: 6px;
+}
+
+textarea{
+    background-color: white;
+    margin: 3px;
+    padding: 12px 20px;
+    border: 2px solid mediumpurple;
+    border-radius: 6px;
+    resize: none;
+}
+
+
+/* FOOOTER STYLES */
+
 

@@ -12,15 +12,18 @@
 
 <nav>
     <ul>
-        <li><a th:href="@{/}" class="active"> Home</a></li>
-        <li><a th:href="@{/history}"> History</a></li>
-        <li><a th:href="@{/contactus}"> Contacts</a></li>
-        <li><a th:href="@{/aboutus}"> About us</a></li>
+        <li>
+            <a th:href="@{/}" class="active"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+        </li>
+        <li><a th:href="@{/history}"><i class="fa fa-history"></i> History</a></li>
+        <li><a th:href="@{/contactus}"><i class="fa fa-envelope"></i> Contacts</a></li>
+        <li><a th:href="@{/aboutus}"><i class="fa fa-info"></i> About us</a></li>
     </ul>
 </nav>
 
+
 <div class="HomeMsg">
-    <img src="../static/images/AutoSignLogo.png" th:src="@{images/AutoSignLogoWhite.png}" class="center"/>
+    <img id="home-logo" src="../static/images/AutoSignLogoWhite.png" th:src="@{images/AutoSignLogoWhite.png}" class="center"/>
     <h1> SignTube</h1>
     <h2> Get your Youtube videos SignTubed! </h2>
 </div>

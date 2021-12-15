@@ -142,9 +142,6 @@ public class AutoSignController {
     public String History(Model model){
         model.addAttribute("home", new HomeView());
 
-        // RETRIEVE INFORMATION FROM DATABASE
-        // ---------------------------------
-
         return "history";
     }
 

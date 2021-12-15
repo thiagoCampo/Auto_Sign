@@ -46,47 +46,6 @@ public class HomeView {
         DownloadObject.downloadObject("autosign-334513", "data_bucket_video_swag", "finals.mp4", "/static/images/file.mp4");
     }
 
-    public String printDatabaseURL(){
-
-        // RETRIEVE INFORMATION FROM DATABASE
-
-        String url = "jdbc:postgresql://localhost:5432/postgres";
-        String user = "postgres";
-        String password = "Arius135";
-        //String result = "<p>" + "<li>" + "URL" + "</li>;" +  "<li>" + "TITLE" + "</li>;" + "<li>" + "DURATION" + "</li>;" + "</p>;";
-        //String array[]={/*nothing in here = array with no elements*/};
-
-
-        //var slides = ["slide 1", "slide 2", "slide 3", "slide 4", "slide 5"]
-        String str = "<ul>";
-
-        try (Connection con = DriverManager.getConnection(url, user, password);
-             PreparedStatement pst = con.prepareStatement("SELECT * FROM videos");
-             ResultSet rs = pst.executeQuery()) {
-
-            int i=0;
-            while (rs.next()) {
-
-                System.out.println(rs.getString(2));
-                str += "<li>" + rs.getString(1) + "</li>";
-                //array[i] = rs.getString(1);
-
-                //result = result + "<p>" + "<li>" + rs.getString(1) + "</li>;" +  "<li>" + rs.getString(2) + "</li>;" + "<li>" + rs.getString(3) + "</li>;" + "</p>;";
-                //i++;
-            }
-            str += "</ul>";
-            //String.innerHTML = str;
-
-        } catch (SQLException ex) {
-
-            Logger lgr = Logger.getLogger(HomeView.class.getName());
-            lgr.log(Level.SEVERE, ex.getMessage(), ex);
-        }
-
-        return str;
-    }
-
-
 
     public String printDBURL(){
 

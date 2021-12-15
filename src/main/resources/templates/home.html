@@ -12,15 +12,12 @@
 
 <nav>
     <ul>
-        <li>
-            <a th:href="@{/}" class="active"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
-        </li>
+        <li><a th:href="@{/}" class="active"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
         <li><a th:href="@{/history}"><i class="fa fa-history"></i> History</a></li>
         <li><a th:href="@{/contactus}"><i class="fa fa-envelope"></i> Contacts</a></li>
         <li><a th:href="@{/aboutus}"><i class="fa fa-info"></i> About us</a></li>
     </ul>
 </nav>
-
 
 <div class="HomeMsg">
     <img id="home-logo" src="../static/images/AutoSignLogoWhite.png" th:src="@{images/AutoSignLogoWhite.png}" class="center"/>
@@ -29,8 +26,8 @@
 </div>
 
 <div class = "form-container">
-    <form action="#" th:action="@{/}" th:object="${home}" method="post">
-        <input placeholder= "(For example: https://www.youtube.com)" type="url" th:field="*{URL}" />
+    <form class="linksearch" action="#" th:action="@{/}" th:object="${home}" method="post">
+        <input class="searchterm" placeholder= "(For example: https://www.youtube.com)" type="url" th:field="*{URL}" />
         <span style="width:0;"></span>
         <input type="submit" value="Submit" /> <input type="reset" value="Reset" />
     </form>

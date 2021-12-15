@@ -81,3 +81,19 @@ li a:hover {
     word-spacing: 1px;
 }
 
+.linksearch {
+    text-align: center;
+}
+
+.searchterm {
+    width: 50%;
+    border: 3px solid #b3b3ff;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    background-color: white;
+    color: white;
+    text-decoration-color: #6A5ACD;
+}

@@ -17,9 +17,17 @@ import java.util.logging.Logger;
 public class HomeView {
 
     private String url;
+    private String embed;
 
     public String getURL() {
         return url;
+    }
+
+    public String getEmbed(){
+        String link = getURL();
+        String[] videoID = link.split("v=");
+        embed = "https://www.youtube.com/embed/" + videoID[1];
+        return embed;
     }
 
     public void setURL(String url) {

@@ -1,14 +1,51 @@
 <!DOCTYPE HTML>
-<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Getting Started: Handling Form Submission</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<h1>Result</h1>
-<p th:text="'URL: ' + ${home.URL}" />
+<h1 style="color: white">Your Video is Ready To Watch!</h1>
+<!--<p style="color: white" th:text="'URL: ' + ${home.getEmbed()}" />-->
+<p><br><br></p>
+<div class="wrapper">
+    <header>Dragable Window</header>
+    <div class="content">
+        <div class="title">BSL Subtitles</div>
+        <video  width="213" height="160" controls>
+            <source th:src="@{/images/they.mp4}" type=video/mp4>
+        </video>
+    </div>
+</div>
 
+<div>
+    <iframe class="center" width="840" height="472" th:src="@{${home.getEmbed()}}" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe>
+    </iframe>
+</div>
 
-<a href="/">Submit another message</a>
+<script>
+    const wrapper = document.querySelector(".wrapper"),
+        header = wrapper.querySelector("header");
+    function onDrag({movementX, movementY}){
+        let getStyle = window.getComputedStyle(wrapper);
+        let leftVal = parseInt(getStyle.left);
+        let topVal = parseInt(getStyle.top);
+        wrapper.style.left = `${leftVal + movementX}px`;
+        wrapper.style.top = `${topVal + movementY}px`;
+    }
+    header.addEventListener("mousedown", ()=>{
+        header.classList.add("active");
+        header.addEventListener("mousemove", onDrag);
+    });
+    document.addEventListener("mouseup", ()=>{
+        header.classList.remove("active");
+        header.removeEventListener("mousemove", onDrag);
+    });
+</script>
+<p style="text-align: center"><br><br><a style="color:white;" href="/">Submit another request <br> </a></p>
 </body>
 </html>

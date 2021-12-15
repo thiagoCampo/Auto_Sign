@@ -154,7 +154,13 @@ public class AutoSignController {
     public String AboutUs(){
         return "aboutus";
     }
+
+
+    @GetMapping("/donate")
+    public String Donate(){
+        return "donate";
     }
+}
 
 
 

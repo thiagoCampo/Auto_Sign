@@ -6,20 +6,23 @@
     <meta charset="UTF-8">
     <title>AutoSign</title>
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 </head>
 <body>
 
-<nav>
+<nav style="text-align: center;">
     <ul>
+        <li><img width="46" height="43.63"th:src="@{/images/AutoSignLogo3.png}" alt="Logo"></li>
         <li><a th:href="@{/}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-        <li><a th:href="@{/history}"><i class="fa fa-history"></i> History</a></li>
-        <li><a th:href="@{/contactus}"><i class="fa fa-envelope"></i> Contacts</a></li>
-        <li><a th:href="@{/aboutus}" class="active"><i class="fa fa-info"></i> About us</a></li>
+        <li><a th:href="@{/history}" ><i class="fa fa-history"></i> History</a></li>
+        <li><a th:href="@{/contactus}" ><i class="fa fa-envelope"></i> Contacts</a></li>
+        <li><a th:href="@{/aboutus}"class="active"><i class="fa fa-info"></i> About us</a></li>
+        <li><a th:href="@{/donate}"><i class="fas fa-piggy-bank"></i> Donate</a></li>
     </ul>
 </nav>
 
 <p class="AboutUsMsg">
+    <br>
     Hello! We are a group of Imperial College Bioengineering students
     that created SignTube to make sign language more accessible and easy
     to learn. With SignTube, you can get all your favorite Youtube videos
@@ -34,7 +37,7 @@
 </p>
 
 <div class="AboutUsMsg">
-    <h2> Our team </h2>
+    <h2> <br> Our team </h2>
 </div>
 
 </body>

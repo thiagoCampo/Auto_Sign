@@ -10,29 +10,29 @@
 </head>
 <body>
 
-<nav>
+<nav style="text-align: center;">
     <ul>
-        <li><a th:href="@{/}" class="active"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+        <li><img width="46" height="44"th:src="@{/images/AutoSignLogo3.png}" alt="Logo"></li>
+        <li><a th:href="@{/}"class="active"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
         <li><a th:href="@{/history}"><i class="fa fa-history"></i> History</a></li>
-        <li><a th:href="@{/contactus}"><i class="fa fa-envelope"></i> Contacts</a></li>
+        <li><a th:href="@{/contactus}" ><i class="fa fa-envelope"></i> Contacts</a></li>
         <li><a th:href="@{/aboutus}"><i class="fa fa-info"></i> About us</a></li>
+        <li><a th:href="@{/donate}"><i class="fas fa-piggy-bank"></i> Donate</a></li>
     </ul>
 </nav>
-
 <div class="HomeMsg">
-    <img id="home-logo" src="../static/images/AutoSignLogoWhite.png" th:src="@{images/AutoSignLogoWhite.png}" class="center"/>
-    <h1> SignTube</h1>
+    <p><br></p>
+    <h1> SignTube</h1> <img width="63.25" height="60"th:src="@{/images/AutoSignLogo3.png}" alt="Logo" class="center">
     <h2> Get your Youtube videos SignTubed! </h2>
 </div>
 
-<div class = "form-container">
-    <form class="linksearch" action="#" th:action="@{/}" th:object="${home}" method="post">
-        <input class="searchterm" placeholder= "(For example: https://www.youtube.com)" type="url" th:field="*{URL}" />
-        <span style="width:0;"></span>
-        <input type="submit" value="Submit" /> <input type="reset" value="Reset" />
-    </form>
-</div>
 
+
+<form action="#" th:action="@{/}" th:object="${home}" method="post">
+    <p style="color:white; text-align: center"><br></br><br></br><br></br>URL: <input type="url" th:field="*{URL}" /></p>
+    <p style="color:white; text-align: center">(For example: https://www.youtube.com)</p>
+    <p style="text-align: center;"><br><input type="submit" value="Submit" /> <input type="reset" value="Reset"  /></p>
+</form>
 
 </body>
 </html>

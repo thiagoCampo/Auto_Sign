@@ -3,20 +3,23 @@
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>AutoSign</title>
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 </head>
 <body>
 
-<nav>
+<nav style="text-align: center;">
     <ul>
+        <li><img width="46" height="43.63"th:src="@{/images/AutoSignLogo3.png}" alt="Logo"></li>
         <li><a th:href="@{/}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
         <li><a th:href="@{/history}"><i class="fa fa-history"></i> History</a></li>
-        <li><a th:href="@{/contactus}" class="active"><i class="fa fa-envelope"></i> Contacts</a></li>
+        <li><a th:href="@{/contactus}"class="active"><i class="fa fa-envelope"></i> Contacts</a></li>
         <li><a th:href="@{/aboutus}"><i class="fa fa-info"></i> About us</a></li>
+        <li><a th:href="@{/donate}"><i class="fas fa-piggy-bank"></i> Donate</a></li>
     </ul>
 </nav>
 
@@ -25,10 +28,10 @@
 </h1>
 
 <form action="https://getform.io/f/5d3c95e5-fd61-43ff-9892-dea07004aaa2" method="post" class="ContactUsMsg" enctype="multipart/form-data">
-    <input type="text" placeholder="First Name" name="fname" size="50" required> <br>
-    <input type="text" placeholder="Last Name" name="lname" size="50" required> <br>
-    <input type="email" placeholder="Email" name="email" size="50"  required> <br>
-    <input type="text" placeholder="Subject" name="subject" size="50" required> <br>
+    <input style="background-color: white; margin: 3px;padding: 12px 20px;border: 2px solid mediumpurple;border-radius: 6px; width: 30%;" type="text" placeholder="First Name" name="fname" size="50" required> <br>
+    <input style="background-color: white; margin: 3px;padding: 12px 20px;border: 2px solid mediumpurple;border-radius: 6px; width: 30%;" type="text" placeholder="Last Name" name="lname" size="50" required> <br>
+    <input  type="email" placeholder="Email" name="email" size="50"  required> <br>
+    <input style="background-color: white; margin: 3px;padding: 12px 20px;border: 2px solid mediumpurple;border-radius: 6px; width: 30%;" type="text" placeholder="Subject" name="subject" size="50" required> <br>
     <textarea placeholder="Message" name="message" rows="10" cols="49" required></textarea> <br><br>
     <input type="submit" name="submit" value="Submit">
 

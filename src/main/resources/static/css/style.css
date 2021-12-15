@@ -26,7 +26,12 @@ ul {
 }
 li {
     float: left;
+    margin-right: 5px;
+    margin-left: 5px;
 }
+
+
+
 li a {
     display: block;
     color: white;
@@ -91,20 +96,33 @@ div.ex8 {
     color: white;
 }
 
+
+.fa {
+    background: transparent;
+}
+
 .active{
     background-color: #b3b3ff;
 }
 
 .HomeMsg {
-    /*float: left;*/
-    text-align: center;
+    float: left;
     width: 100%;
+    padding-top: 15px;
     padding-bottom: 15px;
     padding-top: 15px;
     font-size: large;
     font-weight: bold;
     color: white;
 }
+
+#home-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
 
 .AboutUsMsg {
     float: left;
@@ -113,6 +131,10 @@ div.ex8 {
     color: white;
     line-height: 2rem;
     word-spacing: 1px;
+}
+
+.linksearch {
+    text-align: center;
 }
 
 .ContactUsMsg{
@@ -135,6 +157,19 @@ textarea{
     border: 2px solid mediumpurple;
     border-radius: 6px;
     resize: none;
+}
+
+.searchterm {
+    width: 50%;
+    border: 3px solid #b3b3ff;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    background-color: white;
+    color: white;
+    text-decoration-color: #6A5ACD;
 }
 
 

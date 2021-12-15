@@ -7,6 +7,7 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.youtube.YouTube;
 import com.google.api.services.youtube.model.Video;
 import com.google.api.services.youtube.model.VideoListResponse;
+import org.json.JSONException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -40,10 +41,10 @@ public class AutoSignController {
     }
 
     @PostMapping("/")
-    public String URLsubmit(@ModelAttribute HomeView home, Model model) throws IOException {
+    public String URLsubmit(@ModelAttribute HomeView home, Model model) throws IOException, JSONException {
         model.addAttribute("home", home);
         System.out.println(home.getURL());
-
+        home.sendURL(home.getURL());
         String url = "jdbc:postgresql://localhost:5432/postgres";
         String user = "postgres";
         String password = "Arius135";

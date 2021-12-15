@@ -40,6 +40,57 @@ li a:hover {
     display: block;
     background-color: mediumpurple;
 }
+
+li.ex1 {
+
+    padding-right: 5%;
+}
+div.ex2 {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    /*border: 1px solid red;*/
+    color: white;
+}
+li.ex3 {
+    width: 30%;
+    padding-right: 3%;
+
+}
+li.ex4 {
+
+    padding-right: 5%;
+    width: 30%;
+}
+li.ex5 {
+    width: 30%;
+    padding-right: 3%;
+    font-size: x-large;
+    text-decoration: underline;
+    font-weight: bold;
+
+}
+li.ex6 {
+    padding-right: 5%;
+    width: 30%;
+    font-size: x-large;
+    text-decoration: underline;
+    font-weight: bold;
+
+}
+li.ex7 {
+    padding-right: 5%;
+    font-size: x-large;
+    text-decoration: underline;
+    font-weight: bold;
+
+}
+div.ex8 {
+    padding-bottom: 10px;
+    padding-top: 20px;
+    /*border: 1px solid red;*/
+    color: white;
+}
+
 .active{
     background-color: #b3b3ff;
 }

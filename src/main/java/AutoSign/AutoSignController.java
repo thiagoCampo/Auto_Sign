@@ -18,6 +18,17 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+
+
 @Controller
 public class AutoSignController {
     /**GetMapping associates the URL / to the method home()**/
@@ -112,17 +123,27 @@ public class AutoSignController {
             pst.setString(3, hours + ":" + minutes + ":" + seconds);
             pst.executeUpdate();
 
+            System.out.println(hours);
+            //System.out.println(String(hours));
+
         } catch (SQLException ex) {
 
             Logger lgr = Logger.getLogger(AutoSignController.class.getName());
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
         }
 
+
+
         return "result";
     }
 
     @GetMapping("/history")
-    public String History(){
+    public String History(Model model){
+        model.addAttribute("home", new HomeView());
+
+        // RETRIEVE INFORMATION FROM DATABASE
+        // ---------------------------------
+
         return "history";
     }
 

@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>AutoSign</title>
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+
 </head>
 <body>
 
@@ -17,6 +18,13 @@
         <li><a th:href="@{/aboutus}"> About us</a></li>
     </ul>
 </nav>
+
+<!-- test printing database entries-->
+<!-- <p  th:text="'URL: ' + ${home.printDatabaseURL()}" /> -->
+
+
+
+<div th:utext="${home.printDBURL()}" ></div>
 
 <form>
 

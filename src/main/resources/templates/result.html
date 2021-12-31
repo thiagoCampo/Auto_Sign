@@ -7,6 +7,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" type="text/css" />
+    <link href='https://css.gg/play-button.css' rel='stylesheet'>
+    <link href='https://css.gg/play-pause.css' rel='stylesheet'>
 </head>
 <body>
 <h1 style="color: white">Your Video is Ready To Watch!</h1>
@@ -16,15 +18,16 @@
     <header>Dragable Window</header>
     <div class="content">
         <div class="title">BSL Subtitles</div>
-        <video  width="213" height="160" controls>
-            <source th:src="@{/images/they.mp4}" type=video/mp4>
-        </video>
+        <div class="player">
+            <video  width="213" height="160" controls>
+                <source th:src="@{/images/they.mp4}" type=video/mp4>
+            </video>
+        </div>
     </div>
 </div>
 
 <div>
-    <iframe class="center" width="840" height="472" th:src="@{${home.getEmbed()}}" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe>
-    </iframe>
+    <iframe class="center" width="840" height="472" id="video" th:src="@{${home.getEmbed()}}"  frameborder="0" allowfullscreen></iframe>
 </div>
 
 <script>
@@ -46,6 +49,91 @@
         header.removeEventListener("mousemove", onDrag);
     });
 </script>
+<!--
+<p><br><br><br></p>
+<div class="playStop">
+
+    <div class="box"></div>
+
+</div>
+-->
+<p><br><br><br></p>
+
+<div class="container2">
+    <button class="button" id="play-button-outer">
+        <div id="play-button"></div>
+    </button>
+    <button class="button" id="pause-button-outer">
+        <div  id="pause-button"></div>
+    </button>
+</div>
+<script>
+    var player;
+    const media = document.querySelector('video');
+    const play = document.querySelector('#play-button');
+    const pause = document.querySelector('#pause-button');
+
+    play.addEventListener('click', playMedia);
+    pause.addEventListener('click', pauseMedia);
+
+    function playMedia() {
+        if(media.paused) {
+            media.play();
+        }
+    }
+
+    function pauseMedia() {
+        if(media.paused != true) {
+            media.pause();
+        }
+    }
+
+    // this function gets called when API is ready to use
+    function onYouTubePlayerAPIReady() {
+        // create the global player from the specific iframe (#video)
+        player = new YT.Player('video', {
+            events: {
+                // call this function when player is ready to use
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+
+        // bind events
+        var playButton = document.getElementById("play-button");
+        playButton.addEventListener("click", function() {
+            player.playVideo();
+        });
+
+        var pauseButton = document.getElementById("pause-button");
+        pauseButton.addEventListener("click", function() {
+            player.pauseVideo();
+        });
+
+        var stopButton = document.getElementById("stop-button");
+        stopButton.addEventListener("click", function() {
+            player.stopVideo();
+        });
+
+    }
+
+    // Inject YouTube API script
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
+<script>
+    const box = document.querySelector('.box');
+    box.addEventListener('click', (e)=>{
+        e.target.classList.toggle('pause');
+
+        }
+    )
+</script>
+<p><br><br><br></p>
 <p style="text-align: center"><br><br><a style="color:white;" href="/">Submit another request <br> </a></p>
 </body>
 </html>

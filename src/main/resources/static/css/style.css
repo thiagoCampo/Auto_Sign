@@ -7,9 +7,9 @@
     font-family: myNavFont;
     src: url(../Fonts/sansation.regular.ttf);
 }
+
 *{
     font-family: MyNavFont;
-    background-color: #6A5ACD;
 }
 body {
     background-color: #6A5ACD;
@@ -42,7 +42,7 @@ li a {
     color: white;
     text-align: center;
     /*padding: 14px 16px;*/
-    padding: 14px 95px;
+    padding: 14px 19px;
     text-decoration: none;
     font-size: large;
 }
@@ -347,8 +347,95 @@ span.price {
         margin-bottom: 20px;
     }
 }
+/*
+.playStop {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0 0 0 0.15), 0 2px 10px rgba(0 0 0 0.1);
+    background: linear-gradient(-20deg, #ddd6f3 0%, #CF9FFF 100%, #CF9FFF 100%);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 
+}
+.box{
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 20px 0px 20px 40px;
+    border-color: transparent transparent transparent #6A5ACD;
+    transition: all 100ms ease-in-out;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
 
-/* FOOOTER STYLES */
+.pause{
+    border-style: double;
+    border-width:0px 0px 0px 30px;
+}
+/* FOOOTER STYLES
+*/
+.container2 {
+    background-color: #dcd0ff;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    display: inline-block;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    position: absolute;
+    left: 45%;
 
+}
+.button {
+    padding: 10px 20px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: #7F8C8D;
+    border: none;
+    border-radius: 4px;
+}
+#play-button-outer{
+    background-color: #2ECC71;
+}
+#play-button {
+    margin: 0 auto;
+    top: 25%;
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 1em 0 1em 2em;
+    border-color: transparent transparent transparent #ffffff;
+    opacity: .75;
+}
+#play-button-outer:hover {
+    background-color: #27AE60;
+}
+.play-button-outer:hover .play-button {
+    opacity: 1;
+}
 
+#pause-button-outer {
+    background-color: #E67E22;
+}
+#pause-button {
+    width: 2em;
+    height: 2em;
+    border-style: double;
+    border-width: 0em 1em 0em 1em;
+    border-width: 0em 0em 0em 2em;
+    border-color: #ffffff;
+    opacity: 0.75;
+}
+#pause-button-outer:hover {
+    background-color: #D35400;
+}
+.pause-button-outer:hover .pause-button {
+    opacity: 1;
+}

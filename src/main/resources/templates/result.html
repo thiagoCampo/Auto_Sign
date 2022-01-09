@@ -94,13 +94,37 @@
         player = new YT.Player('video', {
             events: {
                 // call this function when player is ready to use
-                'onReady': onPlayerReady
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+
             }
         });
+        startInterval()
     }
+    function onPlayerStateChange(event){
+        if (event.data == YT.PlayerState.PAUSED) {
+            media.pause();
+        }
+        else{
+            media.play();
+        }
+    }
+    function startInterval() {
+        var CheckT = document.getElementById("Check_time");
+        const media = document.querySelector('video');
+        //checks every 100ms to see if the video has reached 6s
+        checkInt = setInterval(function() {
+            if (Math.abs(media.currentTime - player.getCurrentTime())>= 0.5) {
+                media.currentTime = player.getCurrentTime();
+                //CheckT.innerHTML += player.getCurrentTime();
+            };
 
+        }, 100)
+    }
     function onPlayerReady(event) {
+        //var CheckT = document.getElementById("Check_time");
 
+        //CheckT.innerHTML += player.getCurrentTime();
         // bind events
         var playButton = document.getElementById("play-button");
         playButton.addEventListener("click", function() {
